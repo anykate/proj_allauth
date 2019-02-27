@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # new
+    'apps.myusers.apps.MyusersConfig',
     'apps.pages.apps.PagesConfig',
 ]
 
@@ -121,3 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#new - CustomUser
+AUTH_USER_MODEL = 'myusers.MyCustomUser'
