@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load socialaccount %}
 
 {% block title %}
   Pages | Home
@@ -11,7 +12,8 @@
     <p>Hi {{ user.username }}
     <p><a href="{% url 'account_logout' %}">Log out</a></p>
   {% else %}
-    <p><a href="{% url 'myusers:signup' %}">Sign Up</a></p>
+    <p><a href="{% url 'account_signup' %}">Sign Up</a></p>
     <p><a href="{% url 'account_login' %}">Log In </a></p>
+    <p><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></p>
   {% endif %}
 {% endblock %}
